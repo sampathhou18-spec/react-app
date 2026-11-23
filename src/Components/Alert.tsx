@@ -1,24 +1,11 @@
-import { type ReactNode } from "react";
-
-interface AlertProps {
-  children: ReactNode;
-  onClose: (isVisible: boolean) => void;
+interface SelectedItem {
+  item: string;
 }
 
-export default function Alert({ children, onClose }: AlertProps) {
+export default function Alert({ item }: SelectedItem) {
   return (
-    // <div className="alert alert-primary" role="alert">
-    //   {children}
-    // </div>
-    <div className="alert alert-primary" role="alert">
-      {children}
-      <button
-        type="button"
-        className="btn-close ms-auto"
-        data-bs-dismiss="alert"
-        aria-label="Close"
-        onClick={() => onClose(false)}
-      ></button>
+    <div className="alert" role="alert">
+      <p>{item} is selected</p>
     </div>
   );
 }

@@ -1,15 +1,12 @@
 interface ButtonProps {
-  onClick: (isVisible: boolean) => void;
+  onClick: () => void;
+  heading: string;
 }
 
-export default function Button({ onClick }: ButtonProps) {
+export default function Button({ onClick, heading }: ButtonProps) {
   return (
-    <button
-      type="button"
-      className="btn btn-primary"
-      onClick={() => onClick(true)}
-    >
-      Create alert
+    <button type="button" className="btn btn-primary" onClick={() => onClick()}>
+      {heading}
     </button>
   );
 }
