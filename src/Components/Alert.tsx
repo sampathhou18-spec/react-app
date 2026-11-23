@@ -5,7 +5,7 @@ interface SelectedItem {
 export default function Alert({ item }: SelectedItem) {
   return (
     <div className="alert" role="alert">
-      <p>{item} is selected</p>
+      {item ? item + " is selected" : ""}
     </div>
   );
 }
